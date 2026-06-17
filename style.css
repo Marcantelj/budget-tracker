@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Changed to min-height so the page can scroll if the list gets long */
+    background-color: #f4f4f4;
+}
+
+/* INPUT CONTAINER: Removed hardcoded height so it responds gracefully */
+.container {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background-color: #444; /* Darkened slightly to make text more readable */
+    padding: 25px;
+    width: 400px;
+    border-radius: 7px;
+    border: 4px solid black;
+}
+
+.containerLabel {
+    font-size: 1.5em;
+    font-weight: bold;
+    animation: colorCycle 4s infinite alternate ease-in-out;
+}
+
+.inputLabel {
+    color: white;
+}
+
+input {
+    padding: 2px;
+    border: 2px solid black;
+}
+
+/* DYNAMIC EXPENSE DISPLAY */
+#expenseContainer {
+    background-color: papayawhip;
+    width: 400px;
+    border: 3px solid black;
+}
+
+.newExpenseContainer {
+    background-color: white;
+    display: flex;
+    justify-content: space-between; /* Pushes layout text left, delete button right */
+    align-items: center;            /* Vertically centers elements inline */
+    padding: 12px;
+    border-bottom: 1px solid #ddd;  /* Uses a clean divider line instead of thick black stacked borders */
+}
+
+/* Removes the divider line from the very last item in the list */
+.newExpenseContainer:last-child {
+    border-bottom: none;
+}
+
+.expense {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* BUTTON ENGINES */
+.delete-btn {
+    padding: 5px 12px;
+    border-radius: 4px;
+    border: 1px solid black;
+    background-color: #fff;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #ff1d1d;
+    color: white;
+    cursor: pointer;
+}
+
+#addExpenses-btn {
+    margin-top: 8px;
+    padding: 8px 25px;
+    border-radius: 4px;
+    border: 1px solid black;
+    background-color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#addExpenses-btn:hover {
+    background-color: rgb(1, 192, 58);
+    color: white;
+}
+
+/* TOTAL DISPLAY FOOTER */
+#totalDisplay {
+    background-color: papayawhip;
+    width: 400px;
+    text-align: center;
+    padding: 15px;
+    border: 3px solid black;
+    border-top: none; 
+    color: #ff1d1d;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+@keyframes colorCycle {
+  0% { color: #ff1d1d; }
+  100% { color: #13f313; }
+}
